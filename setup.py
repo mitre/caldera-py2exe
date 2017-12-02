@@ -67,7 +67,7 @@ run_ctypes_dll = Interpreter("py2exe.run_ctypes_dll",
                              target_desc = "shared_library",
                              define_macros=macros,
                              extra_compile_args=extra_compile_args,
-                             extra_link_args=extra_link_args,
+                             extra_link_args=extra_link_args + ["/DLL"],
                              )
 
 run = Interpreter("py2exe.run",
@@ -119,7 +119,7 @@ resource_dll = Interpreter("py2exe.resources",
                            ["source/dll.c",
                             "source/icon.rc"],
                            target_desc = "shared_library",
-                           extra_link_args=["/NOENTRY"],
+                           extra_link_args=["/DLL"],
                            )
 
 interpreters = [run, run_w, resource_dll,
