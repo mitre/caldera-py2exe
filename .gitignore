@@ -1,0 +1,4 @@
+/build
+/dist
+/py2exe/__pycache__
+*.egg-info/
